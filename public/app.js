@@ -44,6 +44,8 @@ async function deleteTask(id) {
   getTasks();
 }
 
+console.log("Supabase instance:", supabase);
+
 async function signUp() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
