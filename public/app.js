@@ -61,5 +61,3 @@ function logOut() {
   supabase.auth.signOut();
   document.getElementById('taskList').innerHTML = '';
 }
-
-
