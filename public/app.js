@@ -9,8 +9,11 @@ async function fetchQuote() {
   document.getElementById('quote').textContent = data[0].q + ' — ' + data[0].a;
 }
 
+console.log("Supabase instance:", supabase);
+
 async function addTask() {
   const taskInput = document.getElementById('taskInput');
+  console.log("User object:", user);
   const user = supabase.auth.user();
   if (!user) return alert('Please log in first.');
   const { error } = await supabase.from('tasks').insert([{ content: taskInput.value, user_id: user.id }]);
